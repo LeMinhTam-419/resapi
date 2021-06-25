@@ -42,8 +42,9 @@ class Model {
    // this.productColors,
   });
   factory Model.fromJson(Map<String, dynamic> json) {
+    print('zzzz${json}');
     return Model(
-      id: json['id'],
+      id: json['id'] ,
       brand: json['brand'],
       name: json['name'],
       price: json['price'],

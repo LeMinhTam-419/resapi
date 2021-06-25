@@ -8,7 +8,7 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
-  Future<Model> futureAlbum;
+  Future<List<Model>> futureAlbum;
   @override
   void initState() {
     super.initState();
@@ -22,11 +22,11 @@ class HomeState extends State<Home> {
         centerTitle: true,
       ),
       body: Center(
-        child: FutureBuilder<Model>(
+        child: FutureBuilder<List<Model>>(
           future: futureAlbum,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              return Text(snapshot.data.name);
+              return Text(snapshot.data.);
             } else if (snapshot.hasError) {
               print('ggggg${snapshot.error}');
               return Text("${snapshot.error}");
